@@ -1,0 +1,40 @@
+{
+  "name": "openai-memory",
+  "version": "1.0.0",
+  "description": "provides functionality to remember conversations with OpenAI.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "type": "module",
+  "author": "love1ace",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/love1ace/openai-memory.git"
+  },
+  "keywords": [
+    "openai",
+    "chat",
+    "memory",
+    "ChatGPT",
+    "love1ace"
+  ],
+  "bugs": {
+    "url": "https://github.com/love1ace/openai-memory/issues"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "homepage": "https://github.com/love1ace/openai-memory#readme",
+  "dependencies": {
+    "openai": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.19",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

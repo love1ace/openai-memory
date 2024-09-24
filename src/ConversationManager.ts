@@ -36,26 +36,27 @@ export class ConversationManager {
     if (messages.length === 0 && this.initialMessages) {
       if (typeof this.initialMessages === 'string') {
         const systemMessage: Message = { role: 'system', content: this.initialMessages };
-        messages.push(systemMessage);
         await this.storage.saveMessage(conversationId, systemMessage);
+        messages = [systemMessage];
       } else if (Array.isArray(this.initialMessages)) {
-        messages = [...this.initialMessages];
         for (const msg of this.initialMessages) {
           await this.storage.saveMessage(conversationId, msg);
         }
+        messages = [...this.initialMessages];
       } else {
         throw new Error('initialMessages must be a string or an array of Message objects.');
       }
     }
 
     const userMsg: Message = { role: 'user', content: userMessage };
-    messages.push(userMsg);
     await this.storage.saveMessage(conversationId, userMsg);
+
+    const messagesToSend = [...messages, userMsg];
 
     try {
       const response = await this.openai.chat.completions.create({
         model: this.model,
-        messages: messages,
+        messages: messagesToSend,
         temperature: this.temperature,
         max_tokens: this.maxTokens,
       });

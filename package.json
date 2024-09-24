@@ -5,7 +5,6 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
-  "type": "module",
   "author": "love1ace",
   "repository": {
     "type": "git",
@@ -16,6 +15,8 @@
     "chat",
     "memory",
     "ChatGPT",
+    "front-end",
+    "back-end",
     "love1ace"
   ],
   "bugs": {
@@ -28,13 +29,15 @@
   ],
   "homepage": "https://github.com/love1ace/openai-memory#readme",
   "dependencies": {
-    "openai": "^3.2.1"
+    "openai": "^4.63.0"
   },
   "devDependencies": {
     "@types/node": "^18.16.19",
+    "dotenv": "^16.4.5",
     "typescript": "^5.1.6"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "node test.js"
   }
 }

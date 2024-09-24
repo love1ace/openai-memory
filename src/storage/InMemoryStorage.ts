@@ -4,7 +4,8 @@ export class InMemoryStorage implements StorageInterface {
   private conversations: Map<string, Message[]> = new Map();
 
   async getMessages(conversationId: string): Promise<Message[]> {
-    return this.conversations.get(conversationId) || [];
+    const messages = this.conversations.get(conversationId) || [];
+    return [...messages]; 
   }
 
   async saveMessage(conversationId: string, message: Message): Promise<void> {

@@ -6,7 +6,8 @@ class InMemoryStorage {
         this.conversations = new Map();
     }
     async getMessages(conversationId) {
-        return this.conversations.get(conversationId) || [];
+        const messages = this.conversations.get(conversationId) || [];
+        return [...messages];
     }
     async saveMessage(conversationId, message) {
         if (!this.conversations.has(conversationId)) {

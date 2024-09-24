@@ -1,6 +1,6 @@
 {
   "name": "openai-memory",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "provides functionality to remember conversations with OpenAI.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
